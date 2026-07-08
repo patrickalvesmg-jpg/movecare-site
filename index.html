@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movecare — A calcinha pós-parto criada por uma fisioterapeuta</title>
+  <meta name="description" content="A calcinha-órtese pós-parto criada pela Dra. Liliane Araújo, fisioterapeuta especialista em saúde da mulher. Para qualquer via de parto. Frete grátis para todo o Brasil." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Movecare — A calcinha pós-parto criada por uma fisioterapeuta" />
+  <meta property="og:description" content="Sustentação correta, sem costuras, criada por fisioterapeuta especialista em saúde da mulher. Para qualquer via de parto." />
+  <meta property="og:locale" content="pt_BR" />
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="img/favicon-movecare.png" />
+  <link rel="apple-touch-icon" href="img/favicon-movecare.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ════════════════════════════════════════════
+     RESET + VARIÁVEIS — IDENTIDADE P5 BORDÔ
+  ════════════════════════════════════════════ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  :root {
+    --petala:    #F4E9E1;
+    --rose-seco: #E0BFB0;
+    --rose-bg:   #EDD8C9;
+    --bordo:     #7A2E2E;
+    --bordo-dark:#5C2020;
+    --cacau:     #3D2E26;
+    --cobre:     #A47865;
+    --cobre-soft:#7A6B5C;
+
+    --branco:    #FFFFFF;
+    --wpp:       #25D366;
+    --wpp-hover: #1ebe57;
+
+    --shadow-sm: 0 2px 12px rgba(122, 46, 46, 0.08);
+    --shadow-md: 0 8px 32px rgba(122, 46, 46, 0.14);
+    --shadow-lg: 0 20px 60px rgba(122, 46, 46, 0.22);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--petala);
+    color: var(--cacau);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  .wrap {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 2rem);
+  }
+  .wrap-narrow { max-width: 860px; }
+
+  /* ════════════════════════════════════════════
+     TIPOGRAFIA — HIERARQUIA DENSA E DIRETA
+  ════════════════════════════════════════════ */
+
+  /* Headlines de seção: Inter Black, CAIXA ALTA, denso */
+  .h-display {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+    color: var(--cacau);
+  }
+
+  /* Sub-headline: Inter Medium, normal case */
+  .h-sub {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--cobre-soft);
+    line-height: 1.5;
+  }
+
+  /* Eyebrow (rótulo acima do título) */
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bordo);
+    display: inline-block;
+  }
+
+  /* Manifesto/citação: Cormorant Italic — usado SOMENTE em momentos emocionais */
+  .display-italic {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+  }
+
+  strong { font-weight: 700; }
+
+  /* ════════════════════════════════════════════
+     ÍCONES SVG (LUCIDE)
+  ════════════════════════════════════════════ */
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+  }
+  .icon-lg { width: 2rem; height: 2rem; }
+  .icon-xl { width: 2.6rem; height: 2.6rem; }
+
+  /* ════════════════════════════════════════════
+     CTAs
+  ════════════════════════════════════════════ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.1rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    line-height: 1;
+    min-height: 56px;
+    text-transform: uppercase;
+  }
+
+  .btn-primary {
+    background: var(--bordo);
+    color: var(--petala);
+    box-shadow: var(--shadow-md);
+  }
+  .btn-primary:hover {
+    background: var(--bordo-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .btn-wpp {
+    background: var(--wpp);
+    color: var(--branco);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.32);
+  }
+  .btn-wpp:hover {
+    background: var(--wpp-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-large {
+    padding: 1.35rem 2.5rem;
+    font-size: 1.05rem;
+    min-height: 64px;
+  }
+  .btn-block { width: 100%; }
+
+  /* ════════════════════════════════════════════
+     ANIMAÇÕES DE SCROLL
+  ════════════════════════════════════════════ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  @keyframes pulseRing {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5), 0 8px 24px rgba(37, 211, 102, 0.32); }
+    50%      { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.32); }
+  }
+
+  /* ════════════════════════════════════════════
+     PLACEHOLDERS DE IMAGEM
+  ════════════════════════════════════════════ */
+  .img-placeholder {
+    background: linear-gradient(135deg, var(--rose-seco) 0%, var(--rose-bg) 100%);
+    border: 2px dashed var(--cobre);
+    color: var(--cobre);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    min-height: 200px;
+    gap: 0.5rem;
+  }
+  .img-placeholder .ph-label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* ════════════════════════════════════════════
+     LOGO TIPOGRÁFICA (W5 — wordmark Movecare)
+  ════════════════════════════════════════════ */
+  .logo-mark {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1;
+    user-select: none;
+  }
+  .logo-mark .lm-move {
+    font-style: italic;
+    color: var(--bordo);
+  }
+  .logo-mark .lm-care {
+    font-style: normal;
+    color: var(--cacau);
+  }
+  .logo-tagline {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--cobre-soft);
+    margin-top: 0.5rem;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 1 — HERO
+     Desktop: 2 colunas (texto esq + vídeo dir)
+     Mobile: empilhado (logo→headline→sub→vídeo→CTA→bullets)
+  ════════════════════════════════════════════ */
+  .hero {
+    padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(2.5rem, 5vw, 4rem);
+    background: var(--petala);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse, var(--rose-bg) 0%, transparent 70%);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+  }
+
+  /* Logo (sempre no topo, centralizada em ambos) */
+  .hero-logo {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .hero-logo .logo-img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    max-width: min(340px, 78%);
+  }
+  .hero-logo .logo-tagline {
+    font-size: clamp(0.6rem, 1vw, 0.7rem);
+    letter-spacing: 0.32em;
+  }
+
+  /* GRID DESKTOP: 2 colunas */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+
+  .hero-col-text {
+    text-align: left;
+  }
+
+  /* Headline — uma frase única, peso uniforme */
+  .hero-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    color: var(--cacau);
+    margin-bottom: 1.5rem;
+  }
+  .hero-headline .underlined {
+    color: var(--bordo);
+    text-decoration: underline;
+    text-decoration-color: var(--bordo);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+  }
+
+  /* Sub — menor, suave */
+  .hero-sub {
+    font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+    color: var(--cobre-soft);
+    margin-bottom: 2.25rem;
+    line-height: 1.65;
+    font-weight: 400;
+  }
+  .hero-sub strong { color: var(--cacau); font-weight: 700; }
+
+  /* Vídeo — 4:5 (1080×1350) vertical leve, padrão feed Instagram */
+  .hero-video-wrap {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    background: var(--cacau);
+  }
+
+  /* CTA */
+  .hero-cta-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  .hero-cta-microcopy {
+    font-size: 0.88rem;
+    color: var(--cobre-soft);
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    align-items: center;
+  }
+  .hero-cta-microcopy strong { color: var(--bordo); font-weight: 700; }
+  .hero-cta-microcopy .mc-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .hero-cta-microcopy svg {
+    width: 1.05rem; height: 1.05rem;
+    stroke: var(--bordo);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Bullets */
+  .hero-bullets {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.4rem;
+    margin: 0;
+  }
+  .hero-bullets li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-weight: 600;
+    color: var(--cacau);
+    font-size: 0.9rem;
+  }
+  .hero-bullets .bullet-icon {
+    width: 22px;
+    height: 22px;
+    background: var(--bordo);
+    color: var(--petala);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 5px;
+  }
+  .hero-bullets .bullet-icon svg {
+    width: 100%; height: 100%;
+    stroke: currentColor;
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* MOBILE — Empilha: logo → headline → sub → vídeo → CTA → bullets */
+  @media (max-width: 880px) {
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .hero-col-text {
+      text-align: center;
+      display: contents;
+    }
+    .hero-col-text > * {
+      width: 100%;
+    }
+    .hero-headline {
+      order: 1;
+      font-size: clamp(1.9rem, 7vw, 2.5rem);
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+    .hero-sub {
+      order: 2;
+      margin-bottom: 2rem;
+      font-size: 0.98rem;
+      text-align: center;
+    }
+    .hero-col-video {
+      order: 3;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .hero-video-wrap {
+      max-width: 100%;
+    }
+    .hero-cta-area {
+      order: 4;
+      align-items: center;
+      margin-bottom: 1.75rem;
+    }
+    .hero-cta-microcopy {
+      justify-content: center;
+    }
+    .hero-bullets {
+      order: 5;
+      justify-content: center;
+    }
+    .hero-bullets li { font-size: 0.86rem; }
+    .hero-logo { margin-bottom: 1.75rem; }
+    .hero-logo .logo-img { max-width: 260px; }
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 1.5 — FAIXA DE GARANTIAS
+  ════════════════════════════════════════════ */
+  .trust-bar {
+    background: var(--bordo);
+    color: var(--petala);
+    padding: 1.6rem 0;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 800px) {
+    .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  @media (max-width: 800px) {
+    .trust-item { flex-direction: column; text-align: center; gap: 0.4rem; }
+  }
+  .trust-icon-wrap {
+    flex-shrink: 0;
+    color: var(--rose-seco);
+  }
+  .trust-icon-wrap svg {
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .trust-text-wrap { line-height: 1.3; }
+  .trust-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--petala);
+  }
+  .trust-text {
+    font-size: 0.78rem;
+    color: var(--rose-seco);
+    margin-top: 2px;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 2 — AUTORIDADE
+  ════════════════════════════════════════════ */
+  .authority-bar {
+    padding: 2.8rem 0;
+    background: var(--petala);
+    border-bottom: 1px solid rgba(164, 120, 101, 0.15);
+  }
+  .authority-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  @media (max-width: 800px) {
+    .authority-grid { grid-template-columns: repeat(2, 1fr); gap: 1.8rem 1rem; }
+  }
+  .authority-item {
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+  .authority-icon-wrap {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 0.8rem;
+    background: var(--rose-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bordo);
+  }
+  .authority-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: var(--cacau);
+    line-height: 1.5;
+  }
+  .authority-text strong {
+    display: block;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bordo);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 3 — EDUCATIVO
+  ════════════════════════════════════════════ */
+  .education {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--petala);
+  }
+  .education-eyebrow {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .education-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.7rem, 4.2vw, 2.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--cacau);
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .education-title .accent {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color: var(--bordo);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.78em;
+  }
+  .education-text {
+    font-size: 1rem;
+    color: var(--cacau);
+    line-height: 1.75;
+  }
+  .education-text p { margin-bottom: 1.3rem; }
+  .education-text strong {
+    color: var(--bordo);
+    font-weight: 700;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 4 — PILARES
+  ════════════════════════════════════════════ */
+  .pillars {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--rose-bg);
+    position: relative;
+  }
+  .pillars-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .pillars-eyebrow { margin-bottom: 1rem; }
+  .pillars-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--cacau);
+    margin-bottom: 1rem;
+  }
+  .pillars-title .accent {
+    color: var(--bordo);
+    display: block;
+  }
+  .pillars-sub {
+    font-size: 1rem;
+    color: var(--cobre-soft);
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  @media (max-width: 720px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+  .pillar {
+    background: var(--petala);
+    padding: 2rem 1.8rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pillar:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  .pillar-icon-wrap {
+    width: 52px;
+    height: 52px;
+    background: var(--bordo);
+    color: var(--petala);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .pillar-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bordo);
+    margin-bottom: 0.5rem;
+  }
+  .pillar-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--cacau);
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+  }
+  .pillar-text {
+    font-size: 0.95rem;
+    color: var(--cacau);
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════════
+     GALERIA DE PRODUTO (placeholders)
+  ════════════════════════════════════════════ */
+  .product-gallery {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--petala);
+  }
+  .product-gallery-header { text-align: center; margin-bottom: 2.5rem; }
+  .product-gallery-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--cacau);
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+  }
+  .product-gallery-sub {
+    color: var(--cobre-soft);
+    font-size: 1rem;
+  }
+  .product-gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    aspect-ratio: 16/10;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .product-gallery-grid .img-placeholder {
+    min-height: 0;
+    height: 100%;
+    border-radius: var(--radius-sm);
+  }
+  .ph-1 { grid-row: 1 / 3; }
+
+  @media (max-width: 800px) {
+    .product-gallery-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      aspect-ratio: auto;
+      gap: 0.7rem;
+    }
+    .product-gallery-grid > .ph-1 {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      aspect-ratio: 4 / 5;
+    }
+    .product-gallery-grid .img-placeholder {
+      aspect-ratio: 1 / 1;
+      min-height: 140px;
+    }
+    .product-gallery-grid > .ph-1.img-placeholder {
+      aspect-ratio: 4 / 5;
+    }
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 5 — SENSORIAL
+  ════════════════════════════════════════════ */
+  .sensory {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--petala);
+    text-align: center;
+  }
+  .sensory-eyebrow { margin-bottom: 1rem; }
+  .sensory-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.8rem, 4.4vw, 2.6rem);
+    color: var(--cacau);
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sensory-title .accent { color: var(--bordo); display: block; }
+  .sensory-list {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .sensory-list li {
+    background: var(--branco);
+    padding: 1.3rem 1.6rem;
+    border-radius: var(--radius-md);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--cacau);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow-sm);
+    line-height: 1.45;
+  }
+  .sensory-list strong {
+    font-weight: 800;
+    color: var(--bordo);
+    text-transform: uppercase;
+    font-size: 0.82em;
+    letter-spacing: 0.05em;
+  }
+  .sensory-list .sense-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--rose-bg);
+    color: var(--bordo);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .sensory-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 2.8vw, 1.7rem);
+    color: var(--cacau);
+    max-width: 700px;
+    margin: 2rem auto 0;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 6 — FISIOTERAPEUTA CRIADORA
+  ════════════════════════════════════════════ */
+  .creator {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--cacau);
+    color: var(--petala);
+  }
+  .creator-header { text-align: center; margin-bottom: 3rem; }
+  .creator-eyebrow {
+    color: var(--rose-seco);
+    margin-bottom: 1rem;
+    border-color: var(--rose-seco);
+  }
+  .creator-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--petala);
+    line-height: 1.1;
+  }
+  .creator-title .accent {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: var(--rose-seco);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    display: block;
+  }
+  .creator-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+  @media (max-width: 800px) {
+    .creator-grid { grid-template-columns: 1fr; }
+  }
+  .creator-photo {
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-md);
+    position: relative;
+    background: var(--cacau);
+    overflow: hidden;
+  }
+  .creator-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    /* Máscara que afina suavemente em TODAS as bordas, especialmente em baixo */
+    -webkit-mask-image:
+      linear-gradient(to bottom, transparent 0%, #000 8%, #000 60%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.4) 92%, transparent 100%),
+      linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to bottom, transparent 0%, #000 8%, #000 60%, rgba(0,0,0,0.85) 80%, rgba(0,0,0,0.4) 92%, transparent 100%),
+      linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+    mask-composite: intersect;
+  }
+  /* Camada escura adicional pra fundir o rodapé da foto no fundo Cacau */
+  .creator-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, transparent 50%, rgba(61, 46, 38, 0.6) 85%, var(--cacau) 100%),
+      linear-gradient(to top, transparent 92%, rgba(61, 46, 38, 0.4) 100%),
+      linear-gradient(to right, rgba(61, 46, 38, 0.3) 0%, transparent 8%, transparent 92%, rgba(61, 46, 38, 0.3) 100%);
+    pointer-events: none;
+  }
+  .creator-info-eyebrow {
+    color: var(--rose-seco);
+    margin-bottom: 1rem;
+  }
+  .creator-name {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--petala);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+  .creator-creds {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    color: var(--rose-seco);
+    margin-bottom: 1.5rem;
+    line-height: 1.55;
+    opacity: 0.95;
+  }
+  .creator-bio {
+    font-size: 1rem;
+    color: var(--petala);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    opacity: 0.92;
+  }
+  .creator-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.05rem, 2.1vw, 1.3rem);
+    line-height: 1.55;
+    color: var(--petala);
+    border-left: 3px solid var(--bordo);
+    padding-left: 1.5rem;
+    font-weight: 400;
+  }
+  .creator-quote-author {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--rose-seco);
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 7 — COMPARATIVO
+  ════════════════════════════════════════════ */
+  .comparison {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--petala);
+  }
+  .comparison-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .comparison-eyebrow { margin-bottom: 1rem; }
+  .comparison-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--cacau);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .comparison-title .accent { color: var(--bordo); display: block; }
+  .comparison-sub {
+    font-size: 1rem;
+    color: var(--cobre-soft);
+  }
+  .comparison-table {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--branco);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem 1.2rem;
+    text-align: left;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(164, 120, 101, 0.12);
+  }
+  .comparison-table th {
+    background: var(--bordo);
+    color: var(--petala);
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 1.1rem 1.2rem;
+  }
+  .comparison-table th:nth-child(2),
+  .comparison-table th:nth-child(3),
+  .comparison-table td:nth-child(2),
+  .comparison-table td:nth-child(3) {
+    text-align: center;
+    width: 110px;
+  }
+  .comparison-table td:first-child {
+    color: var(--cacau);
+    font-weight: 600;
+  }
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  .comparison-table tr:hover td {
+    background: var(--petala);
+  }
+  .icon-yes, .icon-no {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+  }
+  .icon-yes {
+    background: var(--bordo);
+    color: var(--petala);
+  }
+  .icon-no {
+    background: rgba(164, 120, 101, 0.18);
+    color: var(--cobre);
+  }
+  .icon-yes svg, .icon-no svg {
+    width: 14px; height: 14px;
+    stroke: currentColor;
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  @media (max-width: 480px) {
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.85rem 0.6rem;
+      font-size: 0.86rem;
+    }
+    .comparison-table td:first-child { font-size: 0.86rem; }
+    .comparison-table th:nth-child(2),
+    .comparison-table th:nth-child(3),
+    .comparison-table td:nth-child(2),
+    .comparison-table td:nth-child(3) { width: 64px; }
+    .icon-yes, .icon-no { width: 24px; height: 24px; }
+    .icon-yes svg, .icon-no svg { width: 12px; height: 12px; }
+  }
+
+  .comparison-footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--cacau);
+    line-height: 1.4;
+  }
+  .comparison-footer strong {
+    color: var(--bordo);
+    font-weight: 900;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 8 — PACOTES
+  ════════════════════════════════════════════ */
+  .packages {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--rose-bg);
+    position: relative;
+  }
+  .packages-header {
+    text-align: center;
+    margin-bottom: 2.8rem;
+  }
+  .packages-eyebrow { margin-bottom: 1rem; }
+  .packages-title {
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--bordo);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+  .packages-sub {
+    font-size: 1rem;
+    color: var(--cobre-soft);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+  @media (max-width: 900px) {
+    .packages-grid { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; }
+  }
+
+  .package {
+    background: var(--branco);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.6rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+  }
+  .package:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+  .package-featured {
+    border-color: var(--bordo);
+    background: var(--petala);
+    box-shadow: var(--shadow-lg);
+    transform: scale(1.04);
+  }
+  .package-featured:hover {
+    transform: scale(1.04) translateY(-6px);
+  }
+  @media (max-width: 900px) {
+    .package-featured { transform: none; }
+    .package-featured:hover { transform: translateY(-6px); }
+  }
+
+  .package-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bordo);
+    color: var(--petala);
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.55rem 1.1rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .package-badge-savings {
+    background: var(--rose-seco);
+    color: var(--bordo);
+  }
+
+  .package-tier {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cobre);
+    margin-bottom: 0.35rem;
+  }
+  .package-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--cacau);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+  }
+
+  .package-price-block {
+    margin-bottom: 1rem;
+  }
+  .package-old-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    color: var(--cobre);
+    text-decoration: line-through;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+  }
+  .package-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .package-price-currency {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bordo);
+  }
+  .package-price {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--bordo);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .package-price-cents {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--bordo);
+  }
+  .package-unit {
+    font-size: 0.85rem;
+    color: var(--cobre-soft);
+    font-weight: 500;
+  }
+  .package-savings {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--bordo);
+    background: rgba(122, 46, 46, 0.1);
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 1.4rem;
+    align-self: flex-start;
+  }
+  .package-desc {
+    font-size: 0.92rem;
+    color: var(--cacau);
+    line-height: 1.55;
+    margin-bottom: 1.6rem;
+    flex-grow: 1;
+  }
+  .package-cta {
+    width: 100%;
+    margin-bottom: 0.8rem;
+    font-size: 0.88rem;
+    padding: 1.05rem 1rem;
+  }
+  .package-microcopy {
+    font-size: 0.75rem;
+    color: var(--cobre-soft);
+    text-align: center;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .package-microcopy span { display: inline-flex; align-items: center; gap: 0.25rem; }
+  .package-microcopy svg {
+    width: 0.85rem; height: 0.85rem;
+    stroke: var(--bordo);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .packages-footer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.88rem;
+    color: var(--cobre-soft);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+  }
+  .packages-footer span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .packages-footer svg {
+    width: 1rem; height: 1rem;
+    stroke: var(--bordo);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 9 — FAQ
+  ════════════════════════════════════════════ */
+  .faq {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: var(--petala);
+  }
+  .faq-header { text-align: center; margin-bottom: 2.5rem; }
+  .faq-eyebrow { margin-bottom: 1rem; }
+  .faq-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--cacau);
+    line-height: 1.1;
+  }
+  .faq-list {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    background: var(--branco);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.25s ease;
+  }
+  .faq-item[open] { box-shadow: var(--shadow-md); }
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--cacau);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+    list-style: none;
+  }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question:hover { color: var(--bordo); }
+  .faq-toggle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--rose-bg);
+    color: var(--bordo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background 0.25s ease;
+  }
+  .faq-item[open] .faq-toggle {
+    transform: rotate(180deg);
+    background: var(--bordo);
+    color: var(--petala);
+  }
+  .faq-toggle svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .faq-answer {
+    padding: 0 1.5rem 1.4rem;
+    font-size: 0.95rem;
+    color: var(--cacau);
+    line-height: 1.7;
+  }
+  .faq-answer strong {
+    color: var(--bordo);
+    font-weight: 700;
+  }
+
+  /* ════════════════════════════════════════════
+     SEÇÃO 10 — CTA FINAL
+  ════════════════════════════════════════════ */
+  .final-cta {
+    padding: clamp(3.5rem, 8vw, 6rem) 0;
+    background: linear-gradient(135deg, var(--bordo) 0%, var(--bordo-dark) 100%);
+    color: var(--petala);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(244, 233, 225, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .final-cta .wrap { position: relative; }
+  .final-cta-eyebrow {
+    color: var(--rose-seco);
+    margin-bottom: 1.3rem;
+    border-color: var(--rose-seco);
+  }
+  .final-cta-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    color: var(--petala);
+    margin-bottom: 1.5rem;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+  }
+  .final-cta-title .accent { color: var(--rose-seco); display: block; }
+  .final-cta-sub {
+    font-size: 1rem;
+    color: var(--petala);
+    opacity: 0.92;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+  }
+  .final-cta-sub strong {
+    color: var(--rose-seco);
+    font-weight: 700;
+  }
+  .final-cta-reinforces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    max-width: 420px;
+    margin: 0 auto 2.5rem;
+    list-style: none;
+  }
+  .final-cta-reinforces li {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    align-items: center;
+    gap: 0.85rem;
+    color: var(--petala);
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+  }
+  .final-cta-reinforces .reinforce-icon {
+    width: 36px;
+    height: 36px;
+    background: rgba(244, 233, 225, 0.15);
+    color: var(--rose-seco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .final-cta-reinforces .reinforce-icon svg {
+    width: 18px; height: 18px;
+  }
+  .final-cta-reinforces strong {
+    color: var(--rose-seco);
+    font-weight: 700;
+  }
+  .final-cta-button {
+    margin-bottom: 1.5rem;
+    animation: pulseRing 2.5s ease-in-out infinite;
+  }
+  .final-cta-fineprint {
+    font-size: 0.75rem;
+    color: var(--rose-seco);
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+    line-height: 1.5;
+  }
+
+  /* ════════════════════════════════════════════
+     FOOTER
+  ════════════════════════════════════════════ */
+  .footer {
+    padding: 3rem 0 2rem;
+    background: var(--cacau);
+    color: var(--rose-seco);
+    text-align: center;
+  }
+  .footer-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.85rem;
+    color: var(--rose-seco);
+    margin-bottom: 1rem;
+  }
+  .footer-brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rose-seco);
+    margin-bottom: 1.5rem;
+  }
+  .footer-text {
+    font-size: 0.82rem;
+    opacity: 0.7;
+    line-height: 1.6;
+  }
+
+  /* ════════════════════════════════════════════
+     BOTÃO WHATSAPP FLUTUANTE
+  ════════════════════════════════════════════ */
+  .wpp-float {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--wpp);
+    color: var(--branco);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+    z-index: 100;
+    transition: transform 0.25s ease;
+    animation: pulseRing 2.5s ease-in-out infinite;
+  }
+  .wpp-float:hover { transform: scale(1.08); }
+  .wpp-float svg { width: 30px; height: 30px; }
+
+  /* Mobile fine-tuning */
+  @media (max-width: 600px) {
+    .btn { padding: 1rem 1.5rem; font-size: 0.9rem; }
+    .btn-large { padding: 1.2rem 2rem; font-size: 0.98rem; }
+    .wpp-float { width: 56px; height: 56px; bottom: 1rem; right: 1rem; }
+    .wpp-float svg { width: 28px; height: 28px; }
+  }
+
+  /* ════════════════════════════════════════════
+     MOBILE — CENTRALIZAÇÃO TOTAL DOS TEXTOS
+  ════════════════════════════════════════════ */
+  @media (max-width: 880px) {
+    /* Educativo: parágrafos centralizados */
+    .education .wrap-narrow,
+    .education-text { text-align: center; }
+    .education-text p { text-align: center; }
+
+    /* Pilares: card centralizado por dentro */
+    .pillar { text-align: center; }
+    .pillar-icon-wrap { margin-left: auto; margin-right: auto; }
+
+    /* Sensorial: lista centralizada */
+    .sensory-list li {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.7rem;
+    }
+
+    /* Creator: tudo centralizado */
+    .creator-grid { text-align: center; }
+    .creator-quote {
+      border-left: none;
+      border-top: 3px solid var(--bordo);
+      padding-left: 0;
+      padding-top: 1.25rem;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+  }
+  </style>
+</head>
+<body>
+
+  <!-- SEÇÃO 1 — HERO (desktop: 2 colunas / mobile: empilhado) -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+
+        <!-- LOGO MOVECARE — símbolo + wordmark, centralizada -->
+        <div class="hero-logo reveal">
+          <img src="img/logo-lateral.png" class="logo-img" alt="Movecare — cuidado em movimento" width="1181" height="322" />
+          <span class="logo-tagline">Cuidado em movimento</span>
+        </div>
+
+        <div class="hero-grid">
+
+          <!-- COLUNA TEXTO (esquerda no desktop) -->
+          <div class="hero-col-text">
+            <h1 class="hero-headline reveal">A CALCINHA PÓS-PARTO <span class="underlined">CRIADA POR UMA FISIOTERAPEUTA</span></h1>
+
+            <p class="hero-sub reveal reveal-delay-1">Para você se recuperar com <strong>segurança e liberdade</strong> desde o primeiro dia. Desenvolvida pela Dra. Liliane Araújo, a Movecare é a calcinha-órtese que sustenta seu abdômen na medida certa e respeita seu corpo no pós-parto — seja qual for sua via de parto.</p>
+
+            <div class="hero-cta-area reveal reveal-delay-2">
+              <a href="#pacotes" class="btn btn-primary btn-large">
+                Quero a minha agora
+                <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <p class="hero-cta-microcopy">
+                <span class="mc-item"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> <strong>Frete grátis para todo o Brasil</strong></span>
+                <span class="mc-item"><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Entrega no mesmo dia em João Pessoa*</span>
+              </p>
+            </div>
+
+            <ul class="hero-bullets reveal reveal-delay-3">
+              <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Sem costuras — qualquer via de parto</li>
+              <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Compressão validada pela fisioterapia</li>
+              <li><span class="bullet-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Cintura alta com tecido duplo</li>
+            </ul>
+          </div>
+
+          <!-- COLUNA VÍDEO (direita no desktop / abaixo no mobile) -->
+          <div class="hero-col-video reveal reveal-delay-1">
+            <div class="hero-video-wrap">
+              <div class="img-placeholder" style="height:100%; min-height:0; border-radius: var(--radius-lg);">
+                <svg class="icon-xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <div class="ph-label">Vídeo VTURB · 4:5 (1080×1350)</div>
+                <div>Dra. Liliane apresentando<br/>a Movecare (60-90s)</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1.5 — FAIXA DE GARANTIAS -->
+  <section class="trust-bar">
+    <div class="wrap">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="trust-text-wrap">
+            <div class="trust-title">Frete grátis</div>
+            <div class="trust-text">Para todo o Brasil</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="trust-text-wrap">
+            <div class="trust-title">Mesmo dia</div>
+            <div class="trust-text">Em João Pessoa*</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="trust-text-wrap">
+            <div class="trust-title">WhatsApp</div>
+            <div class="trust-text">Atendimento direto</div>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24"><path d="M21.92 6.01a2 2 0 0 0-1.41-1.41L12 2 3.49 4.6A2 2 0 0 0 2.08 6.01L2 12l.08 5.99a2 2 0 0 0 1.41 1.41L12 22l8.51-2.6a2 2 0 0 0 1.41-1.41L22 12z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+          </div>
+          <div class="trust-text-wrap">
+            <div class="trust-title">Tamanho assistido</div>
+            <div class="trust-text">Acerte de primeira</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2 — AUTORIDADE -->
+  <section class="authority-bar">
+    <div class="wrap">
+      <div class="authority-grid">
+        <div class="authority-item reveal">
+          <div class="authority-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.93 0 3.72.61 5.18 1.65"/><path d="M21 5l-9 9-3-3"/></svg>
+          </div>
+          <p class="authority-text"><strong>Criada por fisioterapeuta</strong>especialista em saúde da mulher</p>
+        </div>
+        <div class="authority-item reveal reveal-delay-1">
+          <div class="authority-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg>
+          </div>
+          <p class="authority-text"><strong>Indicação clínica</strong>baseada em prática com puérperas</p>
+        </div>
+        <div class="authority-item reveal reveal-delay-2">
+          <div class="authority-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 5 6 8c0 4 4 7 6 12 2-5 6-8 6-12 0-3-2-6-6-6Z"/><circle cx="12" cy="8" r="2"/></svg>
+          </div>
+          <p class="authority-text"><strong>Para qualquer via de parto</strong>cesárea ou normal</p>
+        </div>
+        <div class="authority-item reveal reveal-delay-3">
+          <div class="authority-icon-wrap">
+            <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 8 6.2c0 7.3-8 11.8-8 11.8Z"/></svg>
+          </div>
+          <p class="authority-text"><strong>Tecido duplo sem costuras</strong>com suporte real</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3 — EDUCATIVO -->
+  <section class="education">
+    <div class="wrap wrap-narrow">
+      <div class="reveal" style="text-align:center;">
+        <span class="eyebrow education-eyebrow">Por que isso importa</span>
+      </div>
+      <h2 class="education-title reveal">CINTA PÓS-PARTO NÃO É A RESPOSTA. <span class="accent">E A MAIORIA DAS MULHERES NÃO SABE DISSO.</span></h2>
+      <div class="education-text reveal reveal-delay-1">
+        <p>Depois do parto — <strong>seja cesárea ou normal</strong> — o corpo da mulher passa por mudanças profundas. O abdômen perde tônus, a musculatura precisa se reorganizar, e em muitos casos surge a <strong>diástase abdominal</strong>: quando os músculos do abdômen ficam separados e precisam de suporte certo para voltar ao lugar.</p>
+        <p>A maioria das mulheres recorre à cinta pós-parto comum porque foi o que sempre se ouviu falar. O problema é que essa cinta não foi criada para o pós-parto: ela aperta de forma desigual, pressiona pontos sensíveis (a cicatriz da cesárea, a região do períneo no pós-parto normal, o abdômen ainda em recuperação) e em alguns casos chega a <strong>piorar a diástase</strong>.</p>
+        <p>Foi por isso que a fisioterapia especializada em saúde da mulher desenvolveu uma categoria diferente de produto: a <strong>calcinha-órtese pós-parto</strong>. Diferente da cinta comum, ela aplica compressão uniforme, respeita seu corpo, sustenta o abdômen na posição correta e dá liberdade pra mulher se mover com segurança — independente da via de parto.</p>
+        <p>A Movecare é exatamente isso — e foi criada por uma fisioterapeuta que atende puérperas todos os dias.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4 — PILARES -->
+  <section class="pillars">
+    <div class="wrap">
+      <div class="pillars-header reveal">
+        <span class="eyebrow pillars-eyebrow">O que faz diferença</span>
+        <h2 class="pillars-title">4 DETALHES QUE MUDAM <span class="accent">A SUA RECUPERAÇÃO</span></h2>
+        <p class="pillars-sub">Cada característica foi pensada a partir da experiência clínica com mulheres reais — não a partir de tendência de mercado.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar reveal">
+          <div class="pillar-icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M3 6l3 12 3-7 3 9 3-11 3 8 3-3"/></svg>
+          </div>
+          <div class="pillar-label">Sem costuras</div>
+          <h3 class="pillar-title">Conforto onde mais importa</h3>
+          <p class="pillar-text">Não pressiona pontos sensíveis — seja a cicatriz da cesárea ou a região do períneo no pós-parto normal. Você se mexe, se senta e dorme com conforto desde os primeiros dias.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-1">
+          <div class="pillar-icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <div class="pillar-label">Compressão correta</div>
+          <h3 class="pillar-title">A pressão certa, na medida</h3>
+          <p class="pillar-text">Suporta o abdômen sem apertar errado. A pressão é distribuída em toda a peça, exatamente como a fisioterapia pós-parto recomenda — sem pontos de aperto que prejudicam a circulação ou a recuperação.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-2">
+          <div class="pillar-icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+          </div>
+          <div class="pillar-label">Cintura alta</div>
+          <h3 class="pillar-title">Sustentação do abdômen inteiro</h3>
+          <p class="pillar-text">Cobre todo o abdômen, da pelve até as costelas. Dá segurança real pra mulher se mover desde o primeiro dia, sem aquela sensação de que algo vai sair do lugar.</p>
+        </div>
+        <div class="pillar reveal reveal-delay-3">
+          <div class="pillar-icon-wrap">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="pillar-label">Tecido duplo</div>
+          <h3 class="pillar-title">Suporte que dura toda a recuperação</h3>
+          <p class="pillar-text">Diferente das peças finas que viram trapo em duas semanas. O tecido duplo dá durabilidade pra você usar todos os dias durante toda a recuperação — e ainda guardar pra uma próxima gestação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA DO PRODUTO -->
+  <section class="product-gallery">
+    <div class="wrap">
+      <div class="product-gallery-header reveal">
+        <h2 class="product-gallery-title">CONHEÇA A MOVECARE <span style="color:var(--bordo); display:block;">POR DENTRO</span></h2>
+        <p class="product-gallery-sub">Cada detalhe pensado para a recuperação da mulher real.</p>
+      </div>
+      <div class="product-gallery-grid reveal">
+        <div class="img-placeholder ph-1">
+          <svg class="icon-xl" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <div class="ph-label">Foto principal</div>
+          <div>Modelo vestindo a Movecare<br/>(angle frontal completo)</div>
+        </div>
+        <div class="img-placeholder">
+          <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <div class="ph-label">Detalhe</div>
+          <div>Cintura alta /<br/>cobertura abdominal</div>
+        </div>
+        <div class="img-placeholder">
+          <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <div class="ph-label">Detalhe</div>
+          <div>Sem costuras /<br/>tecido duplo</div>
+        </div>
+        <div class="img-placeholder">
+          <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <div class="ph-label">Foto</div>
+          <div>Movecare em uso<br/>cotidiano</div>
+        </div>
+        <div class="img-placeholder">
+          <svg class="icon-lg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          <div class="ph-label">Foto</div>
+          <div>Movecare e movimento<br/>(ângulo lateral)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5 — SENSORIAL -->
+  <section class="sensory">
+    <div class="wrap wrap-narrow">
+      <div class="reveal">
+        <span class="eyebrow sensory-eyebrow">O que muda na sua vida</span>
+        <h2 class="sensory-title">O CUIDADO QUE SE SENTE <span class="accent">E QUE DEVOLVE SUA LIBERDADE</span></h2>
+      </div>
+      <ul class="sensory-list">
+        <li class="reveal">
+          <span class="sense-icon"><svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 6 5 6 8c0 4 4 7 6 12 2-5 6-8 6-12 0-3-2-6-6-6Z"/></svg></span>
+          <span><strong>Liberdade</strong> pra brincar com seu bebê sem desconforto.</span>
+        </li>
+        <li class="reveal reveal-delay-1">
+          <span class="sense-icon"><svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A5.5 5.5 0 0 1 12 4a5.5 5.5 0 0 1 8 6.2c0 7.3-8 11.8-8 11.8Z"/></svg></span>
+          <span><strong>Segurança</strong> pra voltar aos exercícios da fisio sem medo.</span>
+        </li>
+        <li class="reveal reveal-delay-2">
+          <span class="sense-icon"><svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
+          <span><strong>Conforto</strong> pra dormir sem pressionar a região sensível.</span>
+        </li>
+        <li class="reveal reveal-delay-3">
+          <span class="sense-icon"><svg class="icon" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
+          <span><strong>Confiança</strong> pra se vestir e voltar a se sentir você de novo.</span>
+        </li>
+      </ul>
+      <p class="sensory-quote reveal">Sua recuperação merece movimento.<br/>E o movimento merece cuidado.</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 6 — FISIOTERAPEUTA -->
+  <section class="creator">
+    <div class="wrap">
+      <div class="creator-header reveal">
+        <span class="eyebrow creator-eyebrow">A história por trás da marca</span>
+        <h2 class="creator-title">A MOVECARE <span class="accent">NASCEU NA CLÍNICA</span></h2>
+      </div>
+      <div class="creator-grid">
+        <div class="creator-photo reveal">
+          <img src="img/dra-liliane.png" alt="Dra. Liliane Araújo, fisioterapeuta especialista em saúde da mulher e criadora da Movecare" loading="lazy" />
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="eyebrow creator-info-eyebrow">Fisioterapeuta · Criadora da Movecare</span>
+          <h3 class="creator-name">Dra. Liliane Araújo</h3>
+          <p class="creator-creds">Formada pela UFPB · Pós-graduação em Fisioterapia Dermatofuncional · Especialista em saúde da mulher (gestação e pós-parto)</p>
+          <p class="creator-bio">Há anos atendendo gestantes e puérperas em João Pessoa, a Dra. Liliane combina fisioterapia obstétrica e dermatofuncional para cuidar da mulher antes, durante e depois do parto. É de dentro do consultório dela — vendo paciente atrás de paciente — que nasceu a Movecare.</p>
+          <blockquote class="creator-quote">
+            "Cada detalhe da Movecare foi pensado a partir da minha experiência clínica. Eu via mulheres comprando cintas erradas, machucando a cicatriz, atrasando a recuperação. Eu queria entregar pra elas o produto que eu mesma indicaria — porque eu já indico, todos os dias."
+            <span class="creator-quote-author">— Dra. Liliane Araújo</span>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 7 — COMPARATIVO -->
+  <section class="comparison">
+    <div class="wrap">
+      <div class="comparison-header reveal">
+        <span class="eyebrow comparison-eyebrow">Por que escolher Movecare</span>
+        <h2 class="comparison-title">A CALCINHA MOVECARE É DIFERENTE <span class="accent">DE TUDO QUE VOCÊ JÁ VIU</span></h2>
+        <p class="comparison-sub">Lado a lado: cintas pós-parto comuns vs. a calcinha-órtese Movecare.</p>
+      </div>
+      <table class="comparison-table reveal">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th>Cinta comum</th>
+            <th>Movecare</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Compressão uniforme correta</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td>Sem costuras (conforto na cicatriz e períneo)</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td>Cintura alta cobrindo todo abdômen</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td>Liberdade de movimento</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td>Criada por fisioterapeuta especialista</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td>Para qualquer via de parto</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+          <tr><td>Tecido duplo (durabilidade real)</td><td><span class="icon-no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span></td><td><span class="icon-yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span></td></tr>
+        </tbody>
+      </table>
+      <p class="comparison-footer reveal">Não é a mesma coisa. Não é a mesma categoria. <strong>É outro produto.</strong></p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 8 — PACOTES -->
+  <section class="packages" id="pacotes">
+    <div class="wrap">
+      <div class="packages-header reveal">
+        <span class="eyebrow packages-eyebrow">Escolha seu kit</span>
+        <h2 class="packages-title">PACOTES MOVECARE</h2>
+        <p class="packages-sub">Quanto mais peças, mais economia — e mais conforto pra você revezar entre lavagens durante toda a recuperação.</p>
+      </div>
+      <div class="packages-grid">
+
+        <!-- Pacote 1 -->
+        <div class="package reveal">
+          <div class="package-tier">1 Peça</div>
+          <h3 class="package-name">Movecare Solo</h3>
+          <div class="package-price-block">
+            <div class="package-old-price">De R$ 149,90</div>
+            <div class="package-price-row">
+              <span class="package-price-currency">R$</span>
+              <span class="package-price">119</span>
+              <span class="package-price-cents">,90</span>
+            </div>
+          </div>
+          <span class="package-savings">
+            <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Economize R$ 30
+          </span>
+          <p class="package-desc">Pra experimentar a Movecare e sentir a diferença na própria pele.</p>
+          <a href="https://wa.me/5583999254499?text=Oi!%20Quero%20o%20pacote%20Movecare%20Solo%20(1%20pe%C3%A7a%20-%20R%24%20119%2C90)." class="btn btn-primary package-cta">Quero esse pacote</a>
+          <div class="package-microcopy">
+            <span><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Frete grátis</span>
+            <span><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Mesmo dia*</span>
+          </div>
+        </div>
+
+        <!-- Pacote 2 -->
+        <div class="package reveal reveal-delay-1">
+          <span class="package-badge package-badge-savings">Economia</span>
+          <div class="package-tier">Kit 2 Peças</div>
+          <h3 class="package-name">Movecare Dupla</h3>
+          <div class="package-price-block">
+            <div class="package-old-price">De R$ 299,80</div>
+            <div class="package-price-row">
+              <span class="package-price-currency">R$</span>
+              <span class="package-price">219</span>
+              <span class="package-price-cents">,80</span>
+            </div>
+            <div class="package-unit">R$ 109,90 cada peça</div>
+          </div>
+          <span class="package-savings">
+            <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Economize R$ 80
+          </span>
+          <p class="package-desc">O ideal pra revezar entre lavagens e usar todos os dias da recuperação.</p>
+          <a href="https://wa.me/5583999254499?text=Oi!%20Quero%20o%20Kit%202%20pe%C3%A7as%20da%20Movecare%20(R%24%20219%2C80)." class="btn btn-primary package-cta">Quero esse pacote</a>
+          <div class="package-microcopy">
+            <span><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Frete grátis</span>
+            <span><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Mesmo dia*</span>
+          </div>
+        </div>
+
+        <!-- Pacote 3 — destacado -->
+        <div class="package package-featured reveal reveal-delay-2">
+          <span class="package-badge">
+            <svg width="11" height="11" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="currentColor" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Mais escolhido
+          </span>
+          <div class="package-tier">Kit 3 Peças</div>
+          <h3 class="package-name">Recuperação Completa</h3>
+          <div class="package-price-block">
+            <div class="package-old-price">De R$ 449,70</div>
+            <div class="package-price-row">
+              <span class="package-price-currency">R$</span>
+              <span class="package-price">299</span>
+              <span class="package-price-cents">,70</span>
+            </div>
+            <div class="package-unit">R$ 99,90 cada peça</div>
+          </div>
+          <span class="package-savings">
+            <svg width="12" height="12" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Economize R$ 150
+          </span>
+          <p class="package-desc">O kit recomendado pela Dra. Liliane: 3 peças cobrem toda a recuperação com sobra para revezamento e durabilidade.</p>
+          <a href="https://wa.me/5583999254499?text=Oi!%20Quero%20o%20Kit%203%20pe%C3%A7as%20da%20Movecare%20(R%24%20299%2C70)." class="btn btn-primary package-cta">Quero esse pacote</a>
+          <div class="package-microcopy">
+            <span><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Frete grátis</span>
+            <span><svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Mesmo dia*</span>
+          </div>
+        </div>
+
+      </div>
+      <p class="packages-footer">
+        <span><svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg> PIX, cartão ou boleto</span>
+        <span><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Frete grátis para todo o Brasil</span>
+        <span><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg> Atendimento WhatsApp</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 9 — FAQ -->
+  <section class="faq">
+    <div class="wrap">
+      <div class="faq-header reveal">
+        <span class="eyebrow faq-eyebrow">Tira-dúvidas</span>
+        <h2 class="faq-title">PERGUNTAS FREQUENTES</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal" open>
+          <summary class="faq-question">O que é uma calcinha-órtese e como ela é diferente da cinta pós-parto comum?<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <div class="faq-answer">A calcinha-órtese é uma categoria desenvolvida pela <strong>fisioterapia especializada em saúde da mulher</strong>. Diferente da cinta comum (que aperta de forma desigual e pode atrapalhar a recuperação), a calcinha-órtese aplica compressão uniforme, respeita pontos sensíveis, sustenta o abdômen na posição correta e dá liberdade pra mulher se mover. É outro produto, com outra função.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">Posso usar após cesárea? E após parto normal?<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <div class="faq-answer">Sim, nos dois casos. <strong>A Movecare foi pensada para qualquer via de parto</strong> — cesárea ou normal. Nas mulheres que fizeram cesárea, a ausência de costuras evita pressão na cicatriz. Nas que tiveram parto normal, a compressão uniforme ajuda na recuperação do períneo, da diástase e do abdômen. O ideal é seguir a recomendação clínica da sua fisioterapeuta ou obstetra sobre quando começar.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">Quanto tempo posso usar por dia?<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <div class="faq-answer">A Dra. Liliane recomenda uso durante o dia, principalmente em momentos de maior atividade (cuidar do bebê, fazer pequenas tarefas, sair). À noite, o ideal é descansar a região. A recomendação exata depende do seu caso — fale com sua fisioterapeuta ou nos chame no WhatsApp que te ajudamos.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">Como escolho o tamanho certo?<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <div class="faq-answer">Cada paciente tem uma anatomia diferente, e o tamanho certo é fundamental pra peça funcionar como deve. Por isso, ao invés de você adivinhar pela tabela, <strong>a gente te ajuda no WhatsApp</strong>: você manda suas medidas, a gente recomenda o tamanho ideal e garante que você acerte de primeira.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">E se eu errar o tamanho? Vocês trocam?<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <div class="faq-answer">Por se tratar de um <strong>produto íntimo</strong>, <strong>não realizamos troca após o envio</strong> — é uma questão de higiene e segurança da própria cliente, prática padrão em peças íntimas. Por isso a gente faz a <strong>escolha de tamanho assistida no WhatsApp antes de você comprar</strong>: você manda suas medidas, a Dra. Liliane (ou a equipe) recomenda o tamanho ideal, e só depois disso a compra é fechada. Assim, você acerta de primeira sem precisar de troca.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary class="faq-question">Quanto tempo demora pra chegar?<span class="faq-toggle"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></summary>
+          <div class="faq-answer">O envio é feito em até 2 dias úteis após a confirmação da compra. O tempo de entrega varia conforme sua região (de 3 a 10 dias úteis em média). <strong>Em João Pessoa-PB, entregamos no mesmo dia.</strong> No WhatsApp, depois de você confirmar o CEP, a gente passa o prazo exato pra sua cidade.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 10 — CTA FINAL -->
+  <section class="final-cta">
+    <div class="wrap">
+      <span class="eyebrow final-cta-eyebrow">Última chamada</span>
+      <h2 class="final-cta-title">A CALCINHA QUE SUA FISIO RECOMENDARIA <span class="accent">PORQUE FOI UMA FISIO QUE CRIOU</span></h2>
+      <p class="final-cta-sub">Sem costuras. Compressão correta. Para qualquer via de parto. Criada por uma fisioterapeuta especialista em saúde da mulher. <strong>Movecare é cuidado em movimento — e agora ela pode ser sua.</strong></p>
+      <ul class="final-cta-reinforces">
+        <li><span class="reinforce-icon"><svg class="icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span> <span><strong>Frete grátis</strong> para todo o Brasil</span></li>
+        <li><span class="reinforce-icon"><svg class="icon" viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> <span><strong>Entrega no mesmo dia</strong> em João Pessoa*</span></li>
+        <li><span class="reinforce-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span> <span>Atendimento <strong>direto pelo WhatsApp</strong></span></li>
+        <li><span class="reinforce-icon"><svg class="icon" viewBox="0 0 24 24"><path d="M21.92 6.01a2 2 0 0 0-1.41-1.41L12 2 3.49 4.6A2 2 0 0 0 2.08 6.01L2 12l.08 5.99a2 2 0 0 0 1.41 1.41L12 22l8.51-2.6a2 2 0 0 0 1.41-1.41L22 12z"/></svg></span> <span><strong>Tamanho assistido</strong> — acerte de primeira</span></li>
+      </ul>
+      <a href="#pacotes" class="btn btn-primary btn-large final-cta-button" style="background: var(--petala); color: var(--bordo);">
+        Ver pacotes Movecare
+        <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+      </a>
+      <p class="final-cta-fineprint">*Entrega no mesmo dia válida para João Pessoa-PB. Demais regiões com frete grátis em 3-10 dias úteis.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer-tagline">Cuidado em movimento.</p>
+      <p class="footer-brand">MOVECARE · Calcinha-órtese pós-parto</p>
+      <p class="footer-text">Criada por Dra. Liliane Araújo · Fisioterapeuta especialista em saúde da mulher</p>
+    </div>
+  </footer>
+
+  <script>
+    // Animações de scroll (Intersection Observer)
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Fechar outros details ao abrir um (FAQ — opcional, comportamento de accordion)
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          document.querySelectorAll('.faq-item').forEach(other => {
+            if (other !== item) other.removeAttribute('open');
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
